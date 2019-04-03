@@ -34,7 +34,7 @@ def file_name_checker(folder_path, max_length):
                 invalid_names.append((file))
 
         with open(os.path.join(folder_name, file_name), 'w') as f: # After each iteration in a folder,
-            json.dump({'invalid_file_names': invalid_names}, f)    # write all the invalid names to a json file in the root folder of each folder
+            json.dump({'invalid_file_names': invalid_names}, f)    # write all the invalid names to a json file in the folder
 
         invalid_names.clear() # clear the list containing the invalid names for use in the next iterated folder
 
