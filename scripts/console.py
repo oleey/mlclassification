@@ -1,5 +1,5 @@
 
-# python 3.6.7
+# Python 3.6.7
 
 import os
 import json
@@ -15,7 +15,7 @@ def file_name_checker(folder_path):
     invalid_names = [] # list of file names greater than six
 
     if not (os.path.isdir(folder_path)):
-        print("You didn't supply a path. Exiting...")
+        print("You didn't supply a valid path. Exiting...")
         exit()
 
     for root, dirs, files in os.walk(folder_path):
@@ -23,15 +23,13 @@ def file_name_checker(folder_path):
             filename = file.split('.')[0]
             if len(filename) > 6:
                 invalid_names.append(file)
-
     
     return invalid_names
 
 
-
-
 if __name__ == '__main__':
     folder_path = input('Type in an absolute folder path: ')
+    
     names = file_name_checker(folder_path)
     result = {'invalid_file_names': names}
 
